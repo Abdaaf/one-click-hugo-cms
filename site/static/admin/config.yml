@@ -17,6 +17,10 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Intro Blurb", name: "description", widget: "text"}
       - {label: "Image", name: "image", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
+    # Configure i18n for this collection.
+    i18n:
+      structure: single_file
+      locales: [en, nl]
   - name: "pages"
     label: "Pages"
     files:
@@ -104,3 +108,29 @@ collections: # A list of collections the CMS should be able to edit
                 name: images
                 widget: list
                 field: { label: Image, name: image, widget: image }
+defaultContentLanguage: en
+languages:
+  en:
+    disabled: false
+    languageCode: ""
+    languageDirection: ""
+    languageName: ""
+    title: ""
+    weight: 0
+  nl:
+    disabled: false
+    languageCode: "nl"
+    title: "Bijbelwoord"
+i18n:
+  # Required and can be one of multiple_folders, multiple_files or single_file
+  # multiple_folders - persists files in `<folder>/<locale>/<slug>.<extension>`
+  # multiple_files - persists files in `<folder>/<slug>.<locale>.<extension>`
+  # single_file - persists a single file in `<folder>/<slug>.<extension>`
+  structure: multiple_folders
+
+  # Required - a list of locales to show in the editor UI
+  locales: [en, nl]
+
+  # Optional, defaults to the first item in locales.
+  # The locale to be used for fields validation and as a baseline for the entry.
+  default_locale: en
